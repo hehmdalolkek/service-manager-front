@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 
@@ -29,6 +29,10 @@ export default function AddService() {
     setCategories(result.data);
   };
 
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   const onSubmit = async (data) => {
     data.change_date = "0";
 
@@ -43,7 +47,7 @@ export default function AddService() {
         }
       })
       .then((response) => {
-        navigate("/dashboard");
+        navigate(-1);
       })
       .catch((error) => {
         console.log(error);
@@ -142,7 +146,7 @@ export default function AddService() {
           <button className='btn btn-outline-light px-4' type='submit'>Сохранить</button>
         </form>
       </div>
-      <Link className='btn btn-outline-light px-5' to='/dashboard'>Назад</Link>
+      <button className='btn btn-outline-light px-5 mb-5' type='button' onClick={handleGoBack}>Назад</button>
     </div>
   )
 }

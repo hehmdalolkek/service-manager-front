@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 const apiUrl = process.env.REACT_APP_BACKEND;
@@ -78,7 +78,8 @@ export default function Login({ onLogin }) {
             />
             <label htmlFor="password">Пароль</label>
           </div>
-          <button className='btn btn-outline-light px-5' type='submit'>Войти</button>
+          <button className='btn btn-outline-light me-2 px-5' type='submit'>Войти</button>
+          <Link className='btn btn-outline-light px-4' to='/'>Отменить</Link>
         </form>
       </div>
     </div>
