@@ -76,7 +76,7 @@ export default function Dashboard() {
           {
             errorCategory &&
             <div className='alert alert-danger' role='alert'>
-              Ошибка удаления категории. Категория не пуста.
+              Ошибка удаления категории. Категория содержит услуги и не может быть удалена.
             </div>
           }
           <div className='row d-flex'>
