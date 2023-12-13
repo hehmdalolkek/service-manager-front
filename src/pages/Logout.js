@@ -6,6 +6,8 @@ export default function Logout({ onLogout }) {
 
   useEffect(() => {
     localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
+    localStorage.removeItem('password');
     onLogout();
     navigate("/");
   }, [onLogout, navigate]);
