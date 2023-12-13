@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -8,16 +8,16 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navbar from './layout/Navbar';
 import NavbarAdmin from './layout/NavbarAdmin';
 
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Logout from './pages/Logout';
+import Home from './user/Home';
+import Login from './user/Login';
+import Logout from './admin/Logout';
 
-import ViewService from './services/ViewService';
-import ViewCategory from './categories/ViewCategory';
-import AddCategory from './categories/AddCategory';
-import AddService from './services/AddService';
-import EditCategory from './categories/EditCategory';
-import EditService from './services/EditService';
+import ViewService from './user/ViewService';
+import ViewCategory from './user/ViewCategory';
+import AddCategory from './admin/AddCategory';
+import AddService from './admin/AddService';
+import EditCategory from './admin/EditCategory';
+import EditService from './admin/EditService';
 
 import Dashboard from './admin/Dashboard';
 import ViewCategoryAdmin from './admin/ViewCategory';
