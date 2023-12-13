@@ -24,7 +24,7 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg border-body shadow" style={{ backgroundColor: '#702EF8' }}>
         <div className="container">
           <div className='d-flex align-items-center'>
-            <Link className="navbar-brand" to='/'>ServiceManager</Link>
+            <Link className="navbar-brand " to='/'><b>ORWO Expert</b></Link>
             <button className="btn btn-outline-light px-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Категории услуг</button>
           </div>
           <div>

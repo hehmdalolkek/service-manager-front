@@ -24,7 +24,7 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg border-body shadow" style={{ backgroundColor: '#702EF8' }}>
         <div className="container">
           <div className='d-flex align-items-center'>
-            <Link className="navbar-brand" to='/'>ServiceManager Admin Panel</Link>
+            <Link className="navbar-brand" to='/dashboard'><b>ServiceManager Admin Panel</b></Link>
           </div>
           <div>
             <Link className="btn btn-outline-light px-4" to='/logout'>Выйти</Link>
