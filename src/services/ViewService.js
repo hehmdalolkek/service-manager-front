@@ -38,8 +38,8 @@ export default function ViewService() {
 
 
   return (
-    <div className='container'>
-      <div className='py-5'>
+    <div className='container mt-5'>
+      <div className='col-10 mx-auto py-5 mb-5 border shadow rounded'>
         <h2>{service.title}</h2>
         <p className='mt-2'>Категория: <Link className='link-body-emphasis link-underline-opacity-25 link-offset-2' to={`/category/${service.category.id}`}>{service.category.title}</Link></p>
         <p className='col-8 mt-5 mx-auto'>{service.description}</p>

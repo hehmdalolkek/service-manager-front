@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom';
 
 const apiUrl = process.env.REACT_APP_BACKEND;
 
-export default function Dashboard({ credentials }) {
+export default function Dashboard() {
 
   const [services, setServices] = useState([]);
   const [categories, setCategories] = useState([]);
+  const username = localStorage.getItem('username');
+  const password = localStorage.getItem('password');
 
   const loadCategories = async () => {
     const result = await axios.get(`${apiUrl}/api/categories`);
@@ -21,7 +23,6 @@ export default function Dashboard({ credentials }) {
   };
 
   const deleteService = async (id) => {
-    const { username, password } = credentials;
     const base64Credentials = btoa(`${username}:${password}`);
 
     axios
@@ -39,7 +40,6 @@ export default function Dashboard({ credentials }) {
   };
 
   const deleteCategory = async (id) => {
-    const { username, password } = credentials;
     const base64Credentials = btoa(`${username}:${password}`);
 
     axios
@@ -65,12 +65,12 @@ export default function Dashboard({ credentials }) {
   return (
     <div className='container'>
       <div className='py-5 col-10 mx-auto'>
-        <h2 className='mb-5'>Панель администрирования</h2>
+        <h1 className='mb-5'>Панель администрирования</h1>
 
         <div className='border shadow rounded bg-dark py-5 px-4 pb-4 mb-5'>
           <h3 className='mb-4'>Категории</h3>
           <div className='mb-4'>
-            <Link className='btn btn-outline-light px-5 py-2' to='/addcategory'>Создать категорию</Link>
+            <Link className='btn btn-outline-light px-5 py-2' to='/addcategory'>Добавить категорию</Link>
           </div>
           <div className='row d-flex'>
             {categories.map((category, index) => (
@@ -96,7 +96,7 @@ export default function Dashboard({ credentials }) {
         <div className='border shadow rounded bg-dark py-5 px-4 pb-4 mb-5'>
           <h3 className='mb-4'>Услуги</h3>
           <div className='mb-4'>
-            <Link className='btn btn-outline-light px-5 py-2' to='/addservice'>Создать услугу</Link>
+            <Link className='btn btn-outline-light px-5 py-2' to='/addservice'>Добавить услугу</Link>
           </div>
           <div className='row d-flex'>
             {services.map((service, index) => (

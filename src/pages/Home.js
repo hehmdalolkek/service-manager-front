@@ -22,7 +22,8 @@ export default function Home() {
   return (
     <div className='container'>
       <div className='py-5 col-9 mx-auto'>
-        <h2 className='mb-5'>Наши услуги</h2>
+        <h1 className='mb-3'>ORWO Expert - digital агенство</h1>
+        <h3 className='mb-5'>Наши услуги:</h3>
         <div className='row d-flex align-items-stretch'>
           {
             services.map((service, index) => (
