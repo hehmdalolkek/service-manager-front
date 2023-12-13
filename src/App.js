@@ -20,6 +20,7 @@ import EditCategory from './categories/EditCategory';
 import EditService from './services/EditService';
 
 import Dashboard from './admin/Dashboard';
+import ViewCategoryAdmin from './admin/ViewCategory';
 
 
 
@@ -92,8 +93,12 @@ function App() {
           <Route exact path="/logout" element={<Logout onLogout={handleLogout} />} />
 
           <Route exact path='/service/:id' element={<ViewService />} />
-          <Route exact path='/category/:id' element={<ViewCategory />} />
 
+          {isLoggedIn ? (
+            <Route exact path='/category/:id' element={<ViewCategoryAdmin />} />
+          ) : (
+            <Route exact path='/category/:id' element={<ViewCategory />} />
+          )}
 
         </Routes>
 

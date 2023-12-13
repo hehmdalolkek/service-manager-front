@@ -9,6 +9,7 @@ export default function Dashboard() {
 
   const [services, setServices] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [errorCategory, setErrorCategory] = useState(false);
   const username = localStorage.getItem('username');
   const password = localStorage.getItem('password');
 
@@ -52,7 +53,7 @@ export default function Dashboard() {
         loadCategories();
       })
       .catch((error) => {
-        console.log("ошибка удаления");
+        setErrorCategory(true);
       });
   };
 
@@ -72,6 +73,12 @@ export default function Dashboard() {
           <div className='mb-4'>
             <Link className='btn btn-outline-light px-5 py-2' to='/addcategory'>Добавить категорию</Link>
           </div>
+          {
+            errorCategory &&
+            <div className='alert alert-danger' role='alert'>
+              Ошибка удаления категории. Категория не пуста.
+            </div>
+          }
           <div className='row d-flex'>
             {categories.map((category, index) => (
               <div key={index} className='col-6'>
